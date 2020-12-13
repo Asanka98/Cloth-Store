@@ -1,9 +1,9 @@
-package com.shop.services;
+package com.shop.app.services;
 
 import java.util.Optional;
 
-import com.shop.model.Product;
-import com.shop.repo.ProductRepo;
+import com.shop.app.model.Product;
+import com.shop.app.repository.ProductRepo;
 
 public class ProductServices implements ProductRepo {
 
