@@ -2,6 +2,7 @@ package com.shop.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,8 +23,10 @@ public class InventoryController {
 	ProductServices productService;
 	
 	@RequestMapping(path="/addproductpage")
-	public String addproductpage() {
+	public String addproductpage(Model model) {
 		
+		Product product = new Product();
+	    model.addAttribute("product", product);
 		
 		return "addProduct";
 	}

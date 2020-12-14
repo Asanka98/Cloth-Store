@@ -22,6 +22,9 @@ public class Product {
 	@Column(name="size")
 	private String size;
 	
+	@Column(name="gender")
+	private String gender;
+	
 	@Column(name="color")
 	private String color;
 	
@@ -36,16 +39,17 @@ public class Product {
 	}
 
 
-	public Product(String pName, String size, String color, String ptype, String brand) {
+	public Product(String pName, String size, String color, String ptype, String brand, String gender) {
 		super();
 		this.pName = pName;
 		this.size = size;
 		this.color = color;
 		this.ptype = ptype;
 		this.brand = brand;
+		this.gender = gender;
 	}
 
-	public Product(int idProduct, String pName, String size, String color, String ptype, String brand) {
+	public Product(int idProduct, String pName, String size, String color, String ptype, String brand, String gender) {
 		super();
 		this.idProduct = idProduct;
 		this.pName = pName;
@@ -53,7 +57,18 @@ public class Product {
 		this.color = color;
 		this.ptype = ptype;
 		this.brand = brand;
+		this.gender = gender;
 	}
+
+	public String getGender() {
+		return gender;
+	}
+
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 
 	public int getIdProduct() {
 		return idProduct;
