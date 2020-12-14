@@ -2,9 +2,11 @@ package com.shop.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.shop.app.model.User;
 import com.shop.app.services.UserServices;
 
 @Controller
@@ -43,6 +45,14 @@ public class HomeController {
 		
 		
  return "register";
+	
+ }
+ @RequestMapping(value="/adduser")
+ public void addUser(@ModelAttribute("newuser")  User newuser) {
+		
+		
+	 services.addUser(newuser);
+ 
 	
  }
  

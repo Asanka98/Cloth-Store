@@ -9,9 +9,10 @@
 </head>
 <body>
 
-<form th:action="@{/register}" th:object="${user}" method="post">
+<form th:action="@{/user/register}" th:object="${user}" method="post">
   
   <h2>Your Personal Details</h2>
+  
 	<label for="fname"><b>FirstName*</b></label>
     <input type="text" placeholder="Enter Firstname" th:field="*{firstName}" name="fname" id="fname"required>
     
@@ -26,11 +27,11 @@
     <br><br>
     
     <label for="telephone"><b>Telephone*</b></label>
-    <input type="text" placeholder="Enter Telephone" th:field="*{contactno}" name="tel" id="tel"required>
+    <input type="text" placeholder="Enter Telephone" th:field="*{contacNo}" name="tel" id="tel"required>
     
     <br><br>
     
- <h2>Your Password</h2>
+  <h2>Your Password</h2>
  
  	<label for="psw"><b>Password*</b></label>
     <input type="password" placeholder="Enter Password"  name="psw" id="psw" required>
