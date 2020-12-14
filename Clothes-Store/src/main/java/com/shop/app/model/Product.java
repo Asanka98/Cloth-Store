@@ -30,6 +30,11 @@ public class Product {
 	
 	@Column(name="brand")
 	private String brand;
+	
+	public Product() {
+		super();
+	}
+
 
 	public Product(String pName, String size, String color, String ptype, String brand) {
 		super();
