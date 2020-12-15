@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<form th:action="@{/user/register}" th:object="${user}" method="post">
+<form action="#" th:action="@{/user/adduser}" th:object="${newuser}" method="POST">
   
   <h2>Your Personal Details</h2>
   
@@ -27,22 +27,34 @@
     <br><br>
     
     <label for="telephone"><b>Telephone*</b></label>
-    <input type="text" placeholder="Enter Telephone" th:field="*{contacNo}" name="tel" id="tel"required>
+    <input type="text" placeholder="Enter Telephone" th:field="*{contactno}" name="tel" id="tel"required>
     
     <br><br>
     
-  <h2>Your Password</h2>
- 
+  	
  	<label for="psw"><b>Password*</b></label>
-    <input type="password" placeholder="Enter Password"  name="psw" id="psw" required>
+    <input type="password" placeholder="Enter Password" th:field="*{password}"  name="psw" id="psw" required>
     
     <br><br>
     
-    <label for="psw"><b>Confirm Password*</b></label>
-    <input type="password" placeholder="Enter ConfirmPassword" name="cpsw" id="Cpsw" required>
+   	<label for="address"><b>Address*</b></label>
+    <input type="text" placeholder="Enter Address" th:field="*{address}"  name="address" id="address" required>
+    
     
     <br><br>
 
+	<label for="type"><b>Type*</b></label>
+    <input type="text" placeholder="Enter Type" th:field="*{type}"  name="type" id="type" required>
+    
+    <br><br>
+    
+    
+    <label for="gender"><b>Gender*</b></label>
+    <input type="text" placeholder="Enter Gender" th:field="*{gender}"  name="gender" id="gender" required>
+    
+    <br><br>
+    
+    
     <button type="submit">Register</button>
   
   

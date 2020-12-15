@@ -1,8 +1,12 @@
 package com.shop.app.controller;
 
+import org.eclipse.jdt.internal.compiler.apt.util.ModuleLocationHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -41,19 +45,27 @@ public class HomeController {
  }
  
  @RequestMapping(value="/register")
- public String register() {
+ public String register(Model model) {
+	 
+	 User newuser = new User();
 		
+	 model.addAttribute("newuser",newuser);
 		
  return "register";
 	
  }
- @RequestMapping(value="/adduser")
- public void addUser(@ModelAttribute("newuser")  User newuser) {
+ 
+ 
+ @PostMapping(value="/adduser")
+ public String addUser(@ModelAttribute  User newuser, Model model) {
 		
+	 System.out.println(newuser.toString());
 		
 	 services.addUser(newuser);
+	 
+	 Model m = model.addAttribute("newuser",newuser);
  
-	
+	 return register(m);
  }
  
  
